@@ -1,0 +1,54 @@
+This program can analyze cuircuits and give us as
+
+###########################################################################
+The Names of circuit elements:
+%V=voltage source
+%CS=current_source
+%VCVS=voltage controlled voltage source  
+%VCCS=voltage controlled current source
+%CCVS=current controlled voltage source
+%CCCS=current controlled current source
+%RC=resistors and capacitors
+%L=inductance
+%ML=mutual inductance
+%W=wire
+%G=gyrator
+%T=transformer
+%OP=OP AMP
+###########################################################################
+how to use this program :
+you need to write in  a .txt file,the details of your circuit and write the directory of this input file when program prompts.
+check below if you want to know how to write different elements in the .txt file.
+#values are all in SI Units.
+%%%%%%%%%%%%%%%%%%%%%%%%Resistor%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+to give a resistor as an input to the program you need to write it as below:
+R(The type of element) R_1(name of the resistor which is optional) i(number of the node which is attached to the resistor(cannot be the ground node) j(the other node that is attached to the resistor(can be the ground node)) R(the resistance in ohms)
+#you can not use space seperated names for the elements(for example :R 1 is incorrect but R_1 is correct)
+#the different parts of the information about the resistor is seperated by space)
+%%%%%%%%%%%%%%%%%%%%%%%%Capacitor%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+to give a capacitor as an input to the program you need to write it as below:
+C(The type of element) C_1(name is optional) i(number of the node which is attached to the element(cannot be the ground node) j(the other node that is attached to the element(can be the ground node)) c,v0(the capacitance,the initial voltage)
+%%%%%%%%%%%%%%%%%%%%%%%%Inductor%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+to give a capacitor as an input to the program you need to write it as below:
+L(The type of element) L_1(name is optional) i(number of the node which is attached to the element(cannot be the ground node) j(the other node that is attached to the element(can be the ground node)) l,i0(the inductance,the initial current)
+
+%%%%%%%%%%%%%%%%%%%%%%%%Voltage Source(DC)%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+V(The type of element) VS_1(name is optional) i(number of the node which is attached to the positive port of the source) j(the other node that is atteched to the negative port of the source) v,DC/v,sin,Amp,phase,freq,offset
+%%%%%%%%%%%%%%%%%%%%%%%%wire%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+W W_1 i(the node from which the current exits) j(the other node)
+%%%%%%%%%%%%%%%%%%%%%%%%Current Source%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+I(The type of element) IS_1(name is optional) i(number of the node from which the curren exits) j(the other node that the current enters to) i,DC/i,sin,Amp,phase,freq,offset                                                       
+%%%%%%%%%%%%%%%%%%%%%%%%CCVS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+CCVS CCVS_1 k(number of the node which is attached to the positive port of the source) l(the other node that is atteched to the negative port of the source) i,j,p(i is the node from which the controller current exits and enters the j node and p is the gain->V_k-V_l=pI and I exits node i)
+%%%%%%%%%%%%%%%%%%%%%%%%VCVS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+VCVS VCVS_1 k(number of the node which is attached to the positive port of the source) l(the other node that is atteched to the negative port of the source) i,j,u(i is the positive port of controlling voltage and j is its negative side and u is the gain->V_k-V_l=u(V_i-V_j)
+%%%%%%%%%%%%%%%%%%%%%%%%VCCS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+VCCS VCCS_1 k(number of the node from which the current exits) l(the other node) i,j,g(i is the positive port of controlling voltage and j is its negative side and g is the gain->I=g(V_i-V_j)
+%%%%%%%%%%%%%%%%%%%%%%%%VCCS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+CCCS CCCS_1 k(number of the node from which the current exits) l(the other node) i,j,a(i is the node from which the controlling current exits and j is the other node and a is the gain->I=a(I_c)
+###########################################################################################################
+to add other components to your circuit, follow the same logic instructed above.
+
+Author:Meysam Asadi. BSc student at SUT -Iran-Tehran.  Email:meisamasady2002@gmail.com
+
+ 
